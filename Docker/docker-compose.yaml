@@ -1,0 +1,35 @@
+version: '3'
+
+services:
+  webserver:
+    image: php:7.4-apache
+    container_name: php_web
+    volumes:
+      - ./src:/var/www/html
+    ports:
+      - "8080:80"
+    networks:
+      - app-network
+  app:
+    build: services/php
+    volumes:
+      - ../CV/WithEditModalAndLoginDatabase:/app
+  db:
+    image: mariadb:latest
+    environment:
+      MYSQL_ROOT_PASSWORD: "root"
+      MYSQL_DATABASE: "cv_db"
+    volumes:
+      - mysqldata:/var/lib/mysql
+    ports:
+      - 3306:3306
+  adminer:
+    image: adminer:latest
+    ports:
+      - "8080:8080"
+
+volumes:
+  mysqldata: {}
+
+networks:
+  app-network: {}
