@@ -1,5 +1,11 @@
 <?php
 session_start();
+
+if (isset($_SESSION['user_id'])) {
+    header('Location: logout.php');
+    exit();
+}
+
 $errorMessage = '';
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $dbPath = '../users.db';
@@ -24,9 +30,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             if ($result) {
                 $user = $result->fetchArray(SQLITE3_ASSOC);
                 if ($user && password_verify($password, $user['password'])) {
-                    $_SESSION['user'] = [
-                        'email' => $user['email'],
-                    ];
+                    $_SESSION['user_id'] = $user['id'];
                     header('Location: cv.php');
                     exit;
                 } else {
