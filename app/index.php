@@ -12,7 +12,6 @@
 </head>
 <body>
     <?php include 'public/php/header.php'; ?>
-    <?php include 'public/php/menu.php'; ?>
     <h1>Welcome to my PHP Page</h1>
     <?php include 'public/php/footer.php'; ?>
 </body>
