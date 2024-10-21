@@ -1,6 +1,7 @@
 .env
 
 #database file
+setup.php
 app/public/users.db
 
 #OS generated files
