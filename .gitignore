@@ -1,4 +1,7 @@
 .env
 
+#database file
+app/public/users.db
+
 #OS generated files
 .DS_Store
