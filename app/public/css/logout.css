@@ -1,0 +1,26 @@
+body {
+    height: 100vh;
+}
+
+.disconnect_button {
+    padding: 20px 40px;
+    border-radius: 25px;
+    font-size: 1.5em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgb(96,9,240);
+    background: linear-gradient(0deg, rgba(96,9,240,1) 0%, rgba(129,5,240,1) 100%);
+    border: none;
+    
+  }
+  .disconnect_button:before {
+    height: 0%;
+    width: 2px;
+  }
+  .disconnect_button:hover {
+    box-shadow:  4px 4px 6px 0 rgba(255,255,255,.5),
+                -4px -4px 6px 0 rgba(116, 125, 136, .5), 
+      inset -4px -4px 6px 0 rgba(255,255,255,.2),
+      inset 4px 4px 6px 0 rgba(0, 0, 0, .4);
+  }
